@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  UploadViewController.swift
 //  IOSInstagramClone
 //
 //  Created by Ercan Pinar on 9/11/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class UploadViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func signInClicked(_ sender: Any) {
+        performSegue(withIdentifier: "toTabBar", sender: nil)
     }
 
     @IBAction func signUpClicked(_ sender: Any) {

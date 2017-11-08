@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  FeedViewController.swift
 //  IOSInstagramClone
 //
 //  Created by Ercan Pinar on 9/11/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
