@@ -132,8 +132,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKc-cj-JeP">
-                                <rect key="frame" x="321" y="438" width="31" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKc-cj-JeP">
+                                <rect key="frame" x="148" y="447" width="78" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Post"/>
                                 <connections>
                                     <action selector="postClicked:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="gk6-fI-aYE"/>
@@ -142,13 +143,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="cKc-cj-JeP" secondAttribute="trailing" constant="7" id="85e-YF-rFg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cKc-cj-JeP" secondAttribute="trailing" constant="133" id="85e-YF-rFg"/>
                             <constraint firstItem="J2J-WW-ebS" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="22" id="J4G-e1-lN4"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="cKc-cj-JeP" secondAttribute="bottom" constant="150" id="PGX-36-b5o"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="cKc-cj-JeP" secondAttribute="bottom" constant="134" id="PGX-36-b5o"/>
                             <constraint firstItem="J2J-WW-ebS" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="Udm-e0-irW"/>
                             <constraint firstItem="y1m-Nx-jI9" firstAttribute="top" secondItem="J2J-WW-ebS" secondAttribute="bottom" constant="8" symbolic="YES" id="erE-xZ-WEK"/>
                             <constraint firstItem="J2J-WW-ebS" firstAttribute="trailing" secondItem="y1m-Nx-jI9" secondAttribute="trailing" id="j4W-SV-85z"/>
-                            <constraint firstItem="cKc-cj-JeP" firstAttribute="top" secondItem="y1m-Nx-jI9" secondAttribute="bottom" constant="8" symbolic="YES" id="kOO-tu-rYe"/>
+                            <constraint firstItem="cKc-cj-JeP" firstAttribute="top" secondItem="y1m-Nx-jI9" secondAttribute="bottom" constant="17" id="kOO-tu-rYe"/>
                             <constraint firstItem="J2J-WW-ebS" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="ltu-HS-H1K"/>
                             <constraint firstItem="J2J-WW-ebS" firstAttribute="leading" secondItem="y1m-Nx-jI9" secondAttribute="leading" id="q5b-nI-ih5"/>
                         </constraints>
@@ -156,6 +157,7 @@
                     <navigationItem key="navigationItem" title="Post New Image" id="LyI-le-si1"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="y1m-Nx-jI9" id="bDs-HE-ygE"/>
+                        <outlet property="postButton" destination="cKc-cj-JeP" id="P2I-pY-ayS"/>
                         <outlet property="selectedImageView" destination="J2J-WW-ebS" id="0Bu-DT-coq"/>
                     </connections>
                 </viewController>

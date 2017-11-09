@@ -17,18 +17,33 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     @IBOutlet weak var selectedImageView: UIImageView!
     @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var postButton: UIButton!
     var uuid = NSUUID().uuidString
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        selectedImageView.isUserInteractionEnabled = true
         
+        //hiding keyboard
+        
+        let hideKeyboardGR = UITapGestureRecognizer(target: self, action: #selector(UploadViewController.hideKeyboard))
+        self.view.addGestureRecognizer(hideKeyboardGR)
+        
+        selectedImageView.isUserInteractionEnabled = true
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(UploadViewController.choosePhoto))
         selectedImageView.addGestureRecognizer(recognizer)
+        
+        postButton.isEnabled = false
     }
 
+    func hideKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    
     @IBAction func postClicked(_ sender: Any) {
+        
+        postButton.isEnabled = false
         
         let imagesFolder = Storage.storage().reference().child("images")
         
@@ -56,6 +71,9 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                     self.tabBarController?.selectedIndex = 0
                     
                     
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newUpload"), object: nil)
+
+                    
                 }
             })
         }
@@ -66,7 +84,6 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         picker.delegate = self
         picker.sourceType = .photoLibrary
         picker.allowsEditing = true
-        
         present(picker, animated: true, completion: nil)
     }
     
@@ -74,6 +91,8 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         selectedImageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
+        
+        self.postButton.isEnabled = true
     }
     
 }

@@ -28,6 +28,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         getDataFromServer()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(FeedViewController.getDataFromServer), name: NSNotification.Name(rawValue: "newUpload"), object: nil)
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userEmailArray.count
@@ -45,15 +51,18 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    func getDataFromServer() {
+    @objc func getDataFromServer() {
         
         Database.database().reference().child("users").observe(DataEventType.childAdded, with: { (snapshot) in
             
             let values = snapshot.value! as! NSDictionary
             let posts = values["post"] as! NSDictionary
-
             let postIDs = posts.allKeys
             
+            self.userEmailArray.removeAll()
+            self.postImageURLArray.removeAll()
+            self.postCommentArray.removeAll()
+        
             for id in postIDs {
                 
                 let singlePost = posts[id] as! NSDictionary

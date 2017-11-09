@@ -207,6 +207,7 @@
 				TargetAttributes = {
 					A837FCC81FB33C3E00B630AB = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 2TKBNA8NYX;
 						ProvisioningStyle = Automatic;
 					};
 					A837FCDE1FB33C3E00B630AB = {
@@ -520,12 +521,14 @@
 			baseConfigurationReference = 2D002793B491A9DDD5F4680B /* Pods-IOSInstagramClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2TKBNA8NYX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/libwebp",
 				);
 				INFOPLIST_FILE = IOSInstagramClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ercanpinar.IOSInstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -538,12 +541,14 @@
 			baseConfigurationReference = ECF07F93136F22313FA96CBD /* Pods-IOSInstagramClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2TKBNA8NYX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/libwebp",
 				);
 				INFOPLIST_FILE = IOSInstagramClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ercanpinar.IOSInstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
