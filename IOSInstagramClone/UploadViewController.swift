@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
+
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var selectedImageView: UIImageView!
     @IBOutlet weak var descriptionTextView: UITextView!
-    
+    var uuid = NSUUID().uuidString
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,27 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
 
     @IBAction func postClicked(_ sender: Any) {
+        
+        let imagesFolder = Storage.storage().reference().child("images")
+        
+        if let imageData = UIImageJPEGRepresentation(selectedImageView.image!, 0.5){
+            
+            imagesFolder.child("\(uuid).jpg").putData(imageData, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    
+                    let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                    let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+                    alert.addAction(okButton)
+                    self.present(alert, animated: true, completion: nil)
+                    
+                } else {
+                    
+                    let imageURL = metadata?.downloadURL()?.absoluteURL
+                    print(imageURL)
+                    
+                }
+            })
+        }
     }
 
     @objc func choosePhoto() {
