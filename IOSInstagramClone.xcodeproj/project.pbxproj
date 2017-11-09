@@ -17,6 +17,7 @@
 		A837FCE41FB33C3E00B630AB /* IOSInstagramCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837FCE31FB33C3E00B630AB /* IOSInstagramCloneTests.swift */; };
 		A837FCEF1FB33F7600B630AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A837FCEE1FB33F7600B630AB /* GoogleService-Info.plist */; };
 		A837FCF11FB342E300B630AB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837FCF01FB342E300B630AB /* LoginViewController.swift */; };
+		A837FCF31FB41CE000B630AB /* selectImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A837FCF21FB41CE000B630AB /* selectImage.jpg */; };
 		B62B142DA1662CEB813720E5 /* Pods_IOSInstagramCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BFDA0527E09CFED2BF89045 /* Pods_IOSInstagramCloneTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		A837FCE51FB33C3E00B630AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A837FCEE1FB33F7600B630AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A837FCF01FB342E300B630AB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A837FCF21FB41CE000B630AB /* selectImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selectImage.jpg; sourceTree = "<group>"; };
 		ECF07F93136F22313FA96CBD /* Pods-IOSInstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSInstagramClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSInstagramClone/Pods-IOSInstagramClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 				A837FCD21FB33C3E00B630AB /* Main.storyboard */,
 				A837FCF01FB342E300B630AB /* LoginViewController.swift */,
 				A837FCD51FB33C3E00B630AB /* Assets.xcassets */,
+				A837FCF21FB41CE000B630AB /* selectImage.jpg */,
 				A837FCD71FB33C3E00B630AB /* LaunchScreen.storyboard */,
 				A837FCDA1FB33C3E00B630AB /* Info.plist */,
 				A837FCEE1FB33F7600B630AB /* GoogleService-Info.plist */,
@@ -226,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A837FCF31FB41CE000B630AB /* selectImage.jpg in Resources */,
 				A837FCD91FB33C3E00B630AB /* LaunchScreen.storyboard in Resources */,
 				A837FCEF1FB33F7600B630AB /* GoogleService-Info.plist in Resources */,
 				A837FCD61FB33C3E00B630AB /* Assets.xcassets in Resources */,
