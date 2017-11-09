@@ -19,6 +19,8 @@
 		A837FCF11FB342E300B630AB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837FCF01FB342E300B630AB /* LoginViewController.swift */; };
 		A837FCF31FB41CE000B630AB /* selectImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A837FCF21FB41CE000B630AB /* selectImage.jpg */; };
 		A837FCF51FB446E400B630AB /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837FCF41FB446E400B630AB /* FeedTableViewCell.swift */; };
+		A837FCF71FB45F4600B630AB /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A837FCF61FB45F4600B630AB /* SDWebImage.framework */; };
+		A837FCF91FB45F6D00B630AB /* libwebp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A837FCF81FB45F6D00B630AB /* libwebp.framework */; };
 		B62B142DA1662CEB813720E5 /* Pods_IOSInstagramCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BFDA0527E09CFED2BF89045 /* Pods_IOSInstagramCloneTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		A837FCF01FB342E300B630AB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A837FCF21FB41CE000B630AB /* selectImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = selectImage.jpg; sourceTree = "<group>"; };
 		A837FCF41FB446E400B630AB /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		A837FCF61FB45F4600B630AB /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
+		A837FCF81FB45F6D00B630AB /* libwebp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libwebp.framework; path = "Pods/../build/Debug-iphoneos/libwebp/libwebp.framework"; sourceTree = "<group>"; };
 		ECF07F93136F22313FA96CBD /* Pods-IOSInstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSInstagramClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSInstagramClone/Pods-IOSInstagramClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A837FCF91FB45F6D00B630AB /* libwebp.framework in Frameworks */,
+				A837FCF71FB45F4600B630AB /* SDWebImage.framework in Frameworks */,
 				738A4756960B76AF2230AFAD /* Pods_IOSInstagramClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +96,8 @@
 		7943B5A96FAB63902B4D2C6E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A837FCF81FB45F6D00B630AB /* libwebp.framework */,
+				A837FCF61FB45F4600B630AB /* SDWebImage.framework */,
 				1DD49C7BE9366E439EC6C6D3 /* Pods_IOSInstagramClone.framework */,
 				6BFDA0527E09CFED2BF89045 /* Pods_IOSInstagramCloneTests.framework */,
 			);
@@ -274,14 +282,18 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-IOSInstagramClone/Pods-IOSInstagramClone-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +520,11 @@
 			baseConfigurationReference = 2D002793B491A9DDD5F4680B /* Pods-IOSInstagramClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/libwebp",
+				);
 				INFOPLIST_FILE = IOSInstagramClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ercanpinar.IOSInstagramClone;
@@ -521,6 +538,11 @@
 			baseConfigurationReference = ECF07F93136F22313FA96CBD /* Pods-IOSInstagramClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/libwebp",
+				);
 				INFOPLIST_FILE = IOSInstagramClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ercanpinar.IOSInstagramClone;

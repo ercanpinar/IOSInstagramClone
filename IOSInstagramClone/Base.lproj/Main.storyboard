@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Feed View Controller-->
+        <!--Home-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FeedViewController" customModule="IOSInstagramClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="261" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YQa-Ez-NXA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="261" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YQa-Ez-NXA">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -33,7 +33,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="260.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BE7-Df-xGz">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BE7-Df-xGz">
                                                     <rect key="frame" x="34" y="26" width="307" height="157"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="307" id="JhX-Wg-JRE"/>
@@ -89,7 +89,7 @@
                             <constraint firstItem="YQa-Ez-NXA" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="cg3-bh-cIK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="NzO-oa-BJk">
+                    <navigationItem key="navigationItem" title="Home" id="NzO-oa-BJk">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="SKE-ay-Xwj">
                             <connections>
                                 <action selector="logoutClicked:" destination="9pv-A4-QxB" id="qBa-xx-iwP"/>
