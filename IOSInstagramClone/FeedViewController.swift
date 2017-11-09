@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class FeedViewController: UIViewController {
 
@@ -15,11 +17,17 @@ class FeedViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func logoutClicked(_ sender: Any) {
+        
+        UserDefaults.standard.removeObject(forKey: "user")
+        UserDefaults.standard.synchronize()
+        
+        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginVCID") as! LoginViewController
+        let delegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.window?.rootViewController = loginVC
+        delegate.rememberLogin()
+        
     }
-
 
 }
 
