@@ -8,7 +8,9 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 import FirebaseStorage
+import FirebaseDatabase
 
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -42,8 +44,17 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                     
                 } else {
                     
-                    let imageURL = metadata?.downloadURL()?.absoluteURL
-                    print(imageURL)
+                    let imageURL = metadata?.downloadURL()?.absoluteString
+                    
+                    let post = ["image" : imageURL!, "postedby" : Auth.auth().currentUser!.email!, "uuid" : self.uuid, "posttext" : self.descriptionTextView.text] as [String : Any]
+                    
+                    Database.database().reference().child("users").child((Auth.auth().currentUser?.uid)!).child("post").childByAutoId().setValue(post)
+                    
+                    
+                    self.selectedImageView.image = UIImage(named : "selectImage.jpg")
+                    self.descriptionTextView.text = ""
+                    self.tabBarController?.selectedIndex = 0
+                    
                     
                 }
             })
