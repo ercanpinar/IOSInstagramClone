@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-       
+        
+        //Auto - Remember Login for User
         rememberLogin()
         
         FirebaseApp.configure()
@@ -47,8 +48,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func rememberLogin() {
+        //Get user data from Local Storage
         let user : String? = UserDefaults.standard.string(forKey: "user")
         if user != nil {
+            //The Start Storyboard changed (to FeedViewController) - Do not show LoginViewController
             let board = UIStoryboard(name: "Main", bundle: nil)
             let tabBar = board.instantiateViewController(withIdentifier: "tabBarID") as! UITabBarController
             window?.rootViewController = tabBar

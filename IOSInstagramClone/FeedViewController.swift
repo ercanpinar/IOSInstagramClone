@@ -29,7 +29,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        
+        //When The app has a new post, it will update automatically
         NotificationCenter.default.addObserver(self, selector: #selector(FeedViewController.getDataFromServer), name: NSNotification.Name(rawValue: "newUpload"), object: nil)
         
     }
@@ -40,9 +40,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        //Create cell use Customize TabeViewCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedTableViewCell
-   
+        //Set data to each cell
         cell.postedByLabel.text = userEmailArray[indexPath.row]
         cell.postCommentTextView.text = postCommentArray[indexPath.row]
         cell.postImageView.sd_setImage(with: URL(string: self.postImageURLArray[indexPath.row]), completed: nil)
@@ -52,27 +52,27 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc func getDataFromServer() {
-        
+        //The posts data get from Server
         Database.database().reference().child("users").observe(DataEventType.childAdded, with: { (snapshot) in
-            
+            //Read data in FirebaseResponse
             let values = snapshot.value! as! NSDictionary
             let posts = values["post"] as! NSDictionary
             let postIDs = posts.allKeys
-            
+            //Clean data lists
             self.userEmailArray.removeAll()
             self.postImageURLArray.removeAll()
             self.postCommentArray.removeAll()
         
             for id in postIDs {
-                
+                //Each post data
                 let singlePost = posts[id] as! NSDictionary
-                
+                //Add data lists
                 self.userEmailArray.append(singlePost["postedby"]! as! String)
                 self.postCommentArray.append(singlePost["posttext"]! as! String)
                 self.postImageURLArray.append(singlePost["image"]! as! String)
                 
             }
-            
+            //Refresh tableView with new data
             self.feedTableView.reloadData()
             
         })
@@ -81,10 +81,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     @IBAction func logoutClicked(_ sender: Any) {
-        
+        //User removes in phone storage
         UserDefaults.standard.removeObject(forKey: "user")
         UserDefaults.standard.synchronize()
-        
+        //The Start Storyboard changed (to LoginViewController)
         let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginVCID") as! LoginViewController
         let delegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
         delegate.window?.rootViewController = loginVC
